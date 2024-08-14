@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Widget</title>
+    <style>
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbox {
+            display: none;
+            width: 300px;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background-color: #075E54;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .header .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .agent-info h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .agent-info span {
+            font-size: 14px;
+        }
+
+        .chat-message {
+            padding: 15px;
+            background-color: #ffffff;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .whatsapp-btn {
+            display: block;
+            background-color: #25D366;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .floating-button {
+            width: 150px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid #ffffff;
+            outline: none;
+        }
+
+        .floating-button img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .floating-button span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="whatsapp-widget">
+        <div class="chatbox" id="chatbox">
+            <div class="header">
+                <img src="https://tusitio.com/logo.png" alt="Logo" class="logo">
+                <div class="agent-info">
+                    <h3>ONCE México Bot</h3>
+                    <span>Agente</span>
+                </div>
+                <button class="close-button" id="close-chatbox">&times;</button>
+            </div>
+            <div class="chat-message">
+                <p>Hola 👋 ¿Cómo puedo ayudarte? Envíanos un mensaje para ponernos en contacto contigo.</p>
+            </div>
+            <a href="https://wa.me/15557001638?text=Hola,%20necesito%20más%20información" target="_blank" class="whatsapp-btn">
+                <span>Clic para iniciar conversación</span>
+            </a>
+        </div>
+        <div class="floating-button" id="whatsapp-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp Icon">
+            <span>WhatsApp</span>
+        </div>
+    </div>
+</body>
+</html>
