@@ -14,11 +14,18 @@
                     chatbox.style.display = 'block';
                 }
             });
-
+            
             // Añadir funcionalidad al botón de cierre
             document.getElementById('close-chatbox').addEventListener('click', function() {
                 var chatbox = document.getElementById('chatbox');
                 chatbox.style.display = 'none';
+            });
+
+            // Redireccionar después de clic en WhatsApp
+                document.getElementById('whatsapp-link').addEventListener('click', function() {
+                    setTimeout(function(){
+                        window.location.href = 'https://landings.oncemexico.org/gracias-wizard-iso-9001';
+                    }, 3000);  // Redireccionar después de 3 segundos
             });
         })
         .catch(error => console.error('Error al cargar el widget de WhatsApp:', error));
